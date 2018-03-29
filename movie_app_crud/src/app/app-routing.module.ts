@@ -4,12 +4,15 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { MovieSearchComponent } from './components/movies/movie-search/movie-search.component';
 import { MoviesComponent } from './components/movies/movies.component';
+import { LoginComponent } from './components/authedication/login/login.component';
 
 // adding router for HomeComponent and FavouriteMoviesComponent
 const routes :Routes = [
   {path: '', redirectTo:'/movies',pathMatch:'full'},
   {path: 'home', component:MoviesComponent },
   {path: 'favourite', component:FavMoviesComponent },
+  {path: 'login', component:LoginComponent},
+ 
 
 
 ];

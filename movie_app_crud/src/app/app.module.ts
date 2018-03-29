@@ -13,6 +13,8 @@ import { MovieListComponent } from './components/movies/movie-list/movie-list.co
 import { MovieComponent } from './components/movies/movie-list/movie/movie.component';
 import { FavMoviesComponent } from './components/fav-movies/fav-movies.component';
 import { FavMovieComponent } from './components/fav-movies/fav-movie/fav-movie.component';
+import { LoginComponent } from './components/authedication/login/login.component';
+import { RegistrationComponent } from './components/authedication/registration/registration.component';
 
 
 
@@ -27,6 +29,8 @@ import { FavMovieComponent } from './components/fav-movies/fav-movie/fav-movie.c
     MovieComponent,
     FavMoviesComponent,
     FavMovieComponent,
+    LoginComponent,
+    RegistrationComponent,
     
   ],
   imports: [

@@ -9,6 +9,9 @@ import { JsonApiService } from './../../services/json-api.service';
 export class FavMoviesComponent implements OnInit {
   public movies =[] ;
   public flag = 'favd';
+  
+
+  
   constructor(private jsonApiService : JsonApiService) { }
 
   ngOnInit() {

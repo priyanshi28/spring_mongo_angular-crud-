@@ -17,6 +17,10 @@ export class MovieComponent implements OnInit {
   public showError : boolean = false;
    public favCount : any =[];
    @Input() flag: any;
+   //public curruntmovie :any ={};
+  
+   @Output() submit = new EventEmitter();
+  
    @Output() success = new EventEmitter();
   constructor(private jsonApiService : JsonApiService) {
   }
@@ -57,4 +61,13 @@ export class MovieComponent implements OnInit {
       // this.showError = true;
     })
   }
+
+ setmoviefav(movie)
+ {
+   
+   this.submit.emit({
+      'curruntmovie': movie
+    });
+ }
+
 }

@@ -25,7 +25,9 @@ export class JsonApiService {
   getFavourite(){ 
     return this.http.get(AppConfig.apiUrl+'/all', {headers: this.headers})
     .map(data => data.json(),
-    (error: any)=>this.handleError(error));
+      
+
+        (error: any)=>this.handleError(error));
    }
 
 
@@ -35,11 +37,25 @@ export class JsonApiService {
     .map(data => data.json(),
     (error: any)=>this.handleError(error));
    }
-
+   // update movie
+  updateMovies(movie){ 
+  return this.http.put(AppConfig.apiUrl+'/update',movie, {headers: this.headers})
+  .map(data => data.json(),
+    (error: any)=>this.handleError(error));
+}
 
    // Handle errors
    private handleError(error: Response){
    return Observable.throw(error.statusText);
+   }
+
+
+
+   submit(user)
+   {
+     return this.http.post(AppConfig.adiUrl+'/userinformation/userdata', user, {headers: this.headers})
+    .map(data => data.json(),
+    (error: any)=>this.handleError(error));
    }
  }
 

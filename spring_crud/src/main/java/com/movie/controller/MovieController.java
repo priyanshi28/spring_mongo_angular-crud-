@@ -3,6 +3,7 @@ package com.movie.controller;
 import java.util.List;
 
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -41,8 +42,18 @@ public class MovieController {
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Void> deleteById(@PathVariable Integer id) {
+		 try {
+		  movieRepository.deleteById(id);
+		  return ResponseEntity.noContent().build();
+		 }
+		 catch (Exception e) {
+		  return ResponseEntity.notFound().build();
+		 }
+		}
 	public void delete(@PathVariable Integer id) {
 		movieRepository.deleteById(id);
+		
 
 	}
 }

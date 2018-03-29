@@ -1,0 +1,16 @@
+ <form>
+ <div class="form-group">
+    <label for="email">Name:</label>
+    <input type="name" [(ngModel)]="user.name" class="form-control" id="mail" name ="username">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Email:</label>
+    <input type="email"[(ngModel)]="user.email" class="form-control" id="email" name="useemail">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" [(ngModel)]="user.password" class="form-control" id="pwd" name ="userpassword">
+  </div>
+  
+  <button type="submit" class="btn btn-default" (click)="submit(user)">Submit</button>
+</form>
