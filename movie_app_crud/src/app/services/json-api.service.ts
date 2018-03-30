@@ -50,10 +50,19 @@ export class JsonApiService {
    }
 
 
-
+// form data submit 
    submit(user)
    {
      return this.http.post(AppConfig.adiUrl+'/userinformation/userdata', user, {headers: this.headers})
+    .map(data => data.json(),
+    (error: any)=>this.handleError(error));
+   }
+
+   // login data 
+
+   onlog(userlog)
+   {
+     return this.http.post(AppConfig.adiUrl+'/userinformation/login', userlog, {headers: this.headers})
     .map(data => data.json(),
     (error: any)=>this.handleError(error));
    }

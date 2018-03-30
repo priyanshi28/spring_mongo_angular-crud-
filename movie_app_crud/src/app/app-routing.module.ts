@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MovieSearchComponent } from './components/movies/movie-search/movie-search.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { LoginComponent } from './components/authedication/login/login.component';
+import { RegistrationComponent}from  './components/authedication/registration/registration.component';
 
 // adding router for HomeComponent and FavouriteMoviesComponent
 const routes :Routes = [
@@ -12,6 +13,7 @@ const routes :Routes = [
   {path: 'home', component:MoviesComponent },
   {path: 'favourite', component:FavMoviesComponent },
   {path: 'login', component:LoginComponent},
+  {path: 'register', component:RegistrationComponent},
  
 
 

@@ -5,5 +5,7 @@ import com.movie.model.Movie;
 
 import userModel.userinfo;
 public interface  userrepository extends MongoRepository<userinfo ,String> { 
+	userinfo findByEmail(String email);
+	userinfo findByPassword(String password);
 
 }
