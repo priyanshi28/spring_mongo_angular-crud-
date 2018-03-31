@@ -40,9 +40,7 @@ public class UserController {
 			
 			 }
 
-			
-	
-			
+
 		}
 
 		@RequestMapping(value = "/login", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -54,14 +52,19 @@ public class UserController {
 			if ((userrepo.findByEmail(email) != null) && (userrepo.findByPassword(password) != null)) {
 				response.put("ok", "you succesfully logeed in");
 				return ResponseEntity.accepted().body(response);
-			} else if(userrepo.findByEmail(email) == null) {
-					response.put("error" ," you enter wrong email address");
+			} else {
+				if(userrepo.findByEmail(email) != null)
+				{
+					response.put("error" ," you enter wrong Password");
 					return ResponseEntity.badRequest().body(response);
 				}
-				response.put("error", "Log in failed");
+				else {
+				response.put("error", "your email is wrong" );
 				return ResponseEntity.badRequest().body(response);
+				}
 			}
 		}
+}
 
 
 

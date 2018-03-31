@@ -20,12 +20,12 @@ export class LoginComponent implements OnInit {
 
 submit(user){
 	this.jsonApiService.submit(user).subscribe(data=>{
-      this.user=data;
-this.route.navigate(['/register']);
+  this.user=data;
+  this.route.navigate(['/register']);
     },
-   (error:any)=>{
-      this.errormsg = error.statusText;
-       this.showerror = true;
+ (error:any)=>{
+   this.errormsg = error.statusText;
+   this.showerror = true;
 
     })
     }

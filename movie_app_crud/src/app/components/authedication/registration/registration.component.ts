@@ -10,9 +10,10 @@ import { Router } from '@angular/router';
 
 })
 export class RegistrationComponent implements OnInit {
-	public userlog :any ={}
-	public errormsg :any=[];
+	public user :any ={};
+	public errormsg :any={};
       public showerror :any =[];
+      public wrong ='';
 
 
   constructor( private jsonApiService: JsonApiService ,private router: Router) { }
@@ -20,17 +21,20 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {
   }
 
-  onlog(userlog){
-   this.jsonApiService.onlog(userlog).subscribe(data=>{
-   this.userlog={};
-   this.router.navigate(['/home']);
+  ondetails(user)
+  {
+   this.jsonApiService.ondetails(user).subscribe((res)=>
+   {
+     this.user={};
+     this.router.navigate(['/home']);
+   },(error:any)=>{
+     this.errormsg= JSON.parse(error._body);
+     //alert(this.errormsg.error);
+     this.wrong = 'yes';
+   })
 
-    },
-    (error:any)=>{
-      this.errormsg = error.statusText;
-       this.showerror = true;
-       
-    })
-    }
+  }
+
+  //------------
 }
  

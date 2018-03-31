@@ -46,7 +46,7 @@ export class JsonApiService {
 
    // Handle errors
    private handleError(error: Response){
-   return Observable.throw(error.statusText);
+  // return Observable.throw(error.statusText);
    }
 
 
@@ -60,9 +60,9 @@ export class JsonApiService {
 
    // login data 
 
-   onlog(userlog)
+   ondetails(user)
    {
-     return this.http.post(AppConfig.adiUrl+'/userinformation/login', userlog, {headers: this.headers})
+     return this.http.post(AppConfig.adiUrl+'/userinformation/login', user, {headers: this.headers})
     .map(data => data.json(),
     (error: any)=>this.handleError(error));
    }
